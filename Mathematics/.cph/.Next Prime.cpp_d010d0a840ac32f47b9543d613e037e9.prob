@@ -1,1 +1,0 @@
-{"name":"Local: Next Prime","url":"c:\\Users\\rupes\\VS Code\\CSES-solutions\\Mathematics\\Next Prime.cpp","tests":[{"id":1763284109393,"input":"5\n1\n2\n3\n42\n1337","output":"2\n3\n5\n43\n1361"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\rupes\\VS Code\\CSES-solutions\\Mathematics\\Next Prime.cpp","group":"local","local":true}

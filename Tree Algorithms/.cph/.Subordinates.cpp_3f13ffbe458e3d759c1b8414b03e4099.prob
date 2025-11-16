@@ -1,1 +1,0 @@
-{"name":"Local: Subordinates","url":"c:\\Users\\rupes\\VS Code\\CSES-solutions\\Tree Algorithms\\Subordinates.cpp","tests":[{"id":1763213664803,"input":"5\n1 1 2 3","output":"4 1 1 0 0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\rupes\\VS Code\\CSES-solutions\\Tree Algorithms\\Subordinates.cpp","group":"local","local":true}
