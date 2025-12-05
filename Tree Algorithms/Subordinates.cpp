@@ -1,42 +1,37 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-
-int dfs(int node , vector<vector<int>>& t, vector<int>& sub) {
-    int count = 0;
-    for(int child : t[node]) {
-        count += 1 + dfs(child, t, sub);
+int fn(int idx, const vector<vector<int>>& tree, vector<int>& dp) {
+    if(dp[idx] != -1) {
+        return dp[idx];
     }
-    sub[node] = count;
-    return count;
-}
-
-void solve() {
-    int n;
-    cin >> n;
-    vector<vector<int>> t;
-    vector<int> sub;
-    t.resize(n + 1);
-    sub.resize(n + 1);
-    
-    for(int i = 2; i <= n; i++){
-        int p;
-        cin >> p;
-        t[p].push_back(i);
+    if (tree[idx].empty()) {
+        return 0;  
     }
-    
-    dfs(1, t, sub);
-    
-    for(int i = 1; i <= n; i++){
-        cout << sub[i];
-        if(i < n) cout << " ";
+    int cnt = 0;
+    for (int child : tree[idx]) {
+        cnt += 1 + fn(child, tree, dp);  
     }
-    cout << "\n";
+    return dp[idx] = cnt;
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    solve();
+
+    int n;
+    cin >> n;
+    vector<vector<int>> tree(n + 1);
+    vector<int> dp(n + 1, -1);
+    for (int i = 1; i < n; ++i) {
+        int x;
+        cin >> x;
+        tree[x].push_back(i + 1);
+    }
+    
+    for (int i = 1; i <= n; ++i) {
+        cout << fn(i, tree, dp) << " ";
+    }
+    cout << "\n";
     return 0;
 }
