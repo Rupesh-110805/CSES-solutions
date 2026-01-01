@@ -54,5 +54,6 @@ int main(){
             }
         }
     }
+    cout << "IMPOSSIBLE\n";
     return 0;
 }
